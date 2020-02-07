@@ -1,0 +1,18 @@
+.formCard {
+    margin-top: 1%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.formCard div {
+    margin-bottom: 5px;
+    margin-top: 3px;
+}
+
+.submit, .reset {
+    width: 49%;
+}
+
+.reset {
+    margin-right: 10px;
+}

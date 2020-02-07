@@ -20,6 +20,8 @@ import SupervisedUserCircleIcon from '@material-ui/icons/SupervisedUserCircle';
 import BusinessIcon from '@material-ui/icons/Business';
 import LocationCityIcon from '@material-ui/icons/LocationCity';
 import SearchIcon from '@material-ui/icons/Search';
+import { Link } from 'react-router-dom';
+import Routes from './routes';
 
 const drawerWidth = 240;
 
@@ -126,6 +128,10 @@ const useStyles = makeStyles(theme => ({
         zIndex: theme.zIndex.drawer + 1,
         color: '#fff',
     },
+    link: {
+        textDecorationStyle: 'none',
+        color: '#000'
+    }
 }));
 
 export default function App() {
@@ -155,46 +161,59 @@ export default function App() {
             </AppBar>
             <Drawer variant="permanent" className={clsx(classes.drawer, { [classes.drawerOpen]: open, [classes.drawerClose]: !open, })} classes={{ paper: clsx(classes.drawerPaper, { [classes.drawerOpen]: open, [classes.drawerClose]: !open, }), }} >
                 <List>
-                    <ListItem button key='Dashboard'>
-                        <ListItemIcon>
-                            <DashboardIcon />
-                        </ListItemIcon>
-                        <ListItemText primary='Dashboard' />
-                    </ListItem>
-                    <ListItem button key='Movies'>
-                        <ListItemIcon>
-                            <MovieIcon />
-                        </ListItemIcon>
-                        <ListItemText primary='Movies' />
-                    </ListItem>
-                    <ListItem button key='Actors'>
-                        <ListItemIcon>
-                            <RecentActorsIcon />
-                        </ListItemIcon>
-                        <ListItemText primary='Actors' />
-                    </ListItem>
-                    <ListItem button key='Directors'>
-                        <ListItemIcon>
-                            <SupervisedUserCircleIcon />
-                        </ListItemIcon>
-                        <ListItemText primary='Directors' />
-                    </ListItem>
-                    <ListItem button key='Production Compnay'>
-                        <ListItemIcon>
-                            <BusinessIcon />
-                        </ListItemIcon>
-                        <ListItemText primary='Production Compnay' />
-                    </ListItem>
-                    <ListItem button key='Home Town'>
-                        <ListItemIcon>
-                            <LocationCityIcon />
-                        </ListItemIcon>
-                        <ListItemText primary='Home Town' />
-                    </ListItem>
+                    <Link to="#" className={ clsx(classes.link) }>
+                        <ListItem button key='Dashboard'>
+                            <ListItemIcon>
+                                <DashboardIcon />
+                            </ListItemIcon>
+                            <ListItemText primary='Dashboard' />
+                        </ListItem>
+                    </Link>
+                    <Link to="#" className={ clsx(classes.link) }>
+                        <ListItem button key='Movies'>
+                            <ListItemIcon>
+                                <MovieIcon />
+                            </ListItemIcon>
+                            <ListItemText primary='Movies' />
+                        </ListItem>
+                        </Link>
+                    <Link to="#" className={ clsx(classes.link) }>
+                        <ListItem button key='Actors'>
+                            <ListItemIcon>
+                                <RecentActorsIcon />
+                            </ListItemIcon>
+                            <ListItemText primary='Actors' />
+                        </ListItem>
+                    </Link>
+                    <Link to="#" className={ clsx(classes.link) }>
+                        <ListItem button key='Directors'>
+                            <ListItemIcon>
+                                <SupervisedUserCircleIcon />
+                            </ListItemIcon>
+                            <ListItemText primary='Directors' />
+                        </ListItem>
+                    </Link>
+                    <Link to="#" className={ clsx(classes.link) }>
+                        <ListItem button key='Production Compnay'>
+                            <ListItemIcon>
+                                <BusinessIcon />
+                            </ListItemIcon>
+                            <ListItemText primary='Production Compnay' />
+                        </ListItem>
+                    </Link>
+                    <Link to="/towns" className={ clsx(classes.link) }>
+                        <ListItem button key='Home Town'>
+                            <ListItemIcon>
+                                <LocationCityIcon />
+                            </ListItemIcon>
+                            <ListItemText primary='Home Town' />
+                        </ListItem>
+                    </Link>
                 </List>
             </Drawer>
             <main className={classes.content}>
                 <div className={classes.toolbar} />
+                <Routes></Routes>
             </main>
         </div>
   );
